@@ -12,17 +12,16 @@ import java.util.List;
 @RestController
 @RequestMapping("tasks")
 public class TasksController {
-    private int currentId = 4;
-    private List<Task> tasks = new ArrayList<Task>() {{
-        add(new Task(1, "wash dishes", "wash plates, forks and cups", new Date().toString(), "waiting"));
-        add(new Task(2, "do homework", "solve math problems, write essay", new Date().toString(), "in progress"));
-        add(new Task(3, "go for a walk", "go to the park with friends", new Date().toString(), "done"));
-    }};
-
     private final List<String> statuses = new ArrayList<String>() {{
         add("waiting");
         add("in progress");
         add("done");
+    }};
+    private int currentId = 4;
+    private final List<Task> tasks = new ArrayList<Task>() {{
+        add(new Task(1, "wash dishes", "wash plates, forks and cups", new Date().toString(), "waiting"));
+        add(new Task(2, "do homework", "solve math problems, write essay", new Date().toString(), "in progress"));
+        add(new Task(3, "go for a walk", "go to the park with friends", new Date().toString(), "done"));
     }};
 
     @GetMapping
